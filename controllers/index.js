@@ -2,10 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
-const channelRouter = require("./channel");
+const restaurantRouter = require("./restaurant");
 
 module.exports = models => {
-  router.use("/channels", channelRouter(models));
+  router.use("/restaurant", restaurantRouter(models));
 
   return router;
 };

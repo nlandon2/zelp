@@ -6,6 +6,9 @@ const apiRouter = require("./controllers")(models);
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const express = require("express");
+const graphqlHTTP = require("express-graphql");
+const { buildSchema } = require("graphql");
+
 const app = express();
 
 app.use(morgan("dev"));

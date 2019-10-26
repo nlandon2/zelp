@@ -1,0 +1,42 @@
+{
+  "name": "yelp-finder",
+  "version": "1.0.0",
+  "description": "Finds restaurants to eat",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/initialize.js && mocha tests/test.js && yarn lint",
+    "lint": "eslint --fix .",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest --knexfile models/knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile models/knexfile.js ",
+    "precommit": "pretty-quick --staged",
+    "dev": "nodemon index.js"
+  },
+  "author": "Nate",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8",
+    "knex": "^0.19.5",
+    "moment": "^2.22.2",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4",
+    "pg": "^7.5.0",
+    "prettier": "^1.18.2"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "eslint": "^5.7.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-problems": "^1.1.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.1.2",
+    "mocha": "^5.2.0",
+    "pretty-quick": "^1.4.1",
+    "sqlite3": "^4.0.9"
+  }
+}
