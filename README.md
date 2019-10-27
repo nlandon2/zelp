@@ -68,7 +68,7 @@ UpdateRestaurant(business_id: String input: RestaurantInput)
 Mutation that looks for a restaurant by id and then edits it
 
 ```
-Delete Restaurant(business_id: String)
+DeleteRestaurant(business_id: String)
 ``` 
 Mutation that looks for a restaurant by id and then deletes it
 
