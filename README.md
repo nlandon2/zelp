@@ -75,5 +75,5 @@ Mutation that looks for a restaurant by id and then deletes it
 
 ## Acknowledgments
 
-* Used the Yelp academic dataset
+* Credit to Yelp for the academic dataset
 
