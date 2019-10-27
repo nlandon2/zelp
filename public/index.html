@@ -1,9 +1,55 @@
 <!DOCTYPE html>
-
 <html>
-  <head> </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ZELP API</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
 
   <body>
-    <h1>Zelp</h1>
+    <div id="title">ZELP API</div>
+
+    <div id="link">
+      LINK TO GITHUB:
+      <a href>https://github.com/nlandon2/yelp-finder</a>
+    </div>
+
+    <div id="description">
+      API that uses Yelp academic data of open restaurants from 12 cities in the
+      US and Canada
+    </div>
+
+    <div id="header">GRAPHQL ENDPOINTS:</div>
+    <div id="endpoint1">
+      Restaurants: Query that gets data of every restaurant
+    </div>
+    <div id="endpoint2">
+      Restaurant(business_id: String): Query that gets a restaurant by id
+    </div>
+    <div id="endpoint3">
+      GetEverything(name: String city: String stars: Float categories: String):
+      Query that gets data of every restaurant that can be filtered by name,
+      city, number of stars on Yelp, and what kind of food is served
+    </div>
+    <div id="endpoint4">
+      GetRandom(city: String name: String stars: Float categories: String ):
+      Query that takes a random restaurant after filtering with at most these 4
+      types, kind of like "I'm Feeling Lucky" from Google.
+    </div>
+    <div id="endpoint5">
+      CreateRestaurant(input: RestaurantInput!): Mutation that creates a new
+      restaurant
+    </div>
+    <div id="endpoint6">
+      UpdateRestaurant(business_id String input: RestaurantInput): Mutation that
+      looks for a restaurant by id and then edits it
+    </div>
+    <div id="endpoint7">
+      DeleteRestaurant(business_id String): Mutation that looks for a restaurant
+      by id and deletes it
+    </div>
+
+    <script type="text/css" src="./css/style.css"></script>
   </body>
 </html>

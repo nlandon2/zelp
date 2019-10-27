@@ -18,6 +18,7 @@ const schema = buildSchema(`
   input RestaurantInput {
     business_id: String
     name: String
+    address: String
     city: String
     state: String
     stars: Float
@@ -60,6 +61,7 @@ const root = {
       );
   },
   GetEverything: async request => {
+    let restaurantData = await data.list();
     if (request.name) {
       restaurantData = restaurantData.filter(restaurant => {
         return restaurant.name.indexOf(request.name) !== -1;
