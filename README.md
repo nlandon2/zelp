@@ -3,7 +3,7 @@
 This was created during my time as a student at Code Chrysalis. API based off of the Yelp academic dataset that finds open restaurants in 12 major cities in the US and Canada by their names, city, number of stars, and what kind of food they serve. There is also a feature that gets a random restaurant for people who cannot decide where to eat.
 
 
-### Prerequisites
+## Prerequisites
 ```
 yarn 
 ```
