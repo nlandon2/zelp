@@ -1,21 +1,10 @@
 module.exports = (knex, Restaurant) => {
   return params => {
-    const restaurantId = params.business_id;
-    const restaurantName = params.name;
-    const restaurantCity = params.city;
-    const restaurantState = params.state;
-    const restaurantStars = params.stars;
-    const restaurantCategories = params.categories;
+    const restaurantId = params;
 
     return knex("restaurants")
-      .insert({
-        business_id: restaurantId,
-        name: restaurantName,
-        city: restaurantCity,
-        state: restaurantState,
-        stars: restaurantStars,
-        categories: restaurantCategories
-      })
+      .where({ business_id: restaurantId })
+      .del()
       .then(() => {
         return knex("restaurants").select();
       })

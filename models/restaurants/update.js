@@ -8,8 +8,8 @@ module.exports = (knex, Restaurant) => {
     const restaurantCategories = params.categories;
 
     return knex("restaurants")
-      .insert({
-        business_id: restaurantId,
+      .where({ business_id: restaurantId })
+      .update({
         name: restaurantName,
         city: restaurantCity,
         state: restaurantState,
