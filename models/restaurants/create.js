@@ -1,3 +1,6 @@
+const validateName = name =>
+  typeof name === "string" && name.replace(" ", "").length > 2;
+
 module.exports = (knex, Restaurant) => {
   return params => {
     const restaurantId = params.business_id;
@@ -6,6 +9,12 @@ module.exports = (knex, Restaurant) => {
     const restaurantState = params.state;
     const restaurantStars = params.stars;
     const restaurantCategories = params.categories;
+
+    if (!validateName(restaurantName)) {
+      return Promise.reject(
+        new Error("Name must be provided, and be at least two characters")
+      );
+    }
 
     return knex("restaurants")
       .insert({
@@ -20,14 +29,6 @@ module.exports = (knex, Restaurant) => {
         return knex("restaurants").select();
       })
       .catch(err => {
-        // sanitize known errors
-        if (
-          err.message.match("duplicate key value") ||
-          err.message.match("UNIQUE constraint failed")
-        )
-          return Promise.reject(new Error("That restaurant already exists"));
-
-        // throw unknown errors
         return Promise.reject(err);
       });
   };

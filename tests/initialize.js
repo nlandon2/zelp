@@ -10,6 +10,6 @@ const clearTable = tableName =>
     .del()
     .catch(ignoreError);
 
-const tables = ["channel_messages", "user_messages", "users", "channels"];
+const tables = ["restaurants"];
 
 Promise.all(tables.map(clearTable)).then(process.exit);

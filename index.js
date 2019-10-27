@@ -124,7 +124,7 @@ const root = {
     for (const key in request.input) {
       foundRestaurant[key] = request.input[key];
     }
-    restaurantData = data.update(foundRestaurant);
+    restaurantData = await data.update(foundRestaurant);
     return restaurantData;
   },
   DeleteRestaurant: async request => {
