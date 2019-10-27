@@ -1,1 +1,1 @@
-# zelp
+# yelp-finder
